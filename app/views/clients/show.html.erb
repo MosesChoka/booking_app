@@ -1,0 +1,10 @@
+<div class="mt-18">
+  <%= @client.name %>
+  <%= @client.arrival %>
+  <%= @client.departure %>
+  <%= link_to "Back", root_path %>
+  <%= link_to "Edit Details", edit_client_path(@client) %>
+  <%= button_to "Delete", @client, method: :delete, data: {turbo_confirm: "Are you sure?"}%>
+  <h1 class="font-bold text-4xl">Clients#show</h1>
+  <p>Find me in app/views/clients/show.html.erb</p>
+</div>

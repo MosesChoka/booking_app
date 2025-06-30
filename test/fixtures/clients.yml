@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  arrival: 2025-06-18
-  departure: 2025-06-18
+  arrival: 2025-06-30
+  departure: 2025-06-30
 
 two:
   name: MyString
-  arrival: 2025-06-18
-  departure: 2025-06-18
+  arrival: 2025-06-30
+  departure: 2025-06-30

@@ -1,0 +1,13 @@
+<div class="mt-18">
+  <h1>Clients</h1>
+  <%= link_to "BOOK", new_client_path %>
+  <div>
+    <% @clients.each do |client| %>
+      <div>
+        <a href="/clients/<%= client.id%>">
+          <%= client.name %>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

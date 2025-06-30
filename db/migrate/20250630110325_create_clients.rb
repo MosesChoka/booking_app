@@ -1,6 +1,6 @@
-class CreateBookins < ActiveRecord::Migration[7.2]
+class CreateClients < ActiveRecord::Migration[7.2]
   def change
-    create_table :bookins do |t|
+    create_table :clients do |t|
       t.string :name
       t.date :arrival
       t.date :departure
