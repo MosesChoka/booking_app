@@ -1,9 +1,16 @@
 <div class="mt-20">
-  <% @room.images.each do |image| %>
-    <%= image_tag image %>
-  <% end %>
-  <%= @room.title %>
-  <%= @room.description %>
-  <%= link_to 'Edit', edit_room_path(@room) %>
-  <%= button_to 'Delete', @room , method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+  <div class="w-4xl mx-auto">
+    <div class="py-20 grid grid-cols-3 gap-6">
+      <% @room.images.each do |image| %>
+        <div>
+          <%= image_tag image, class:"border border-b-blue-700 rounded-lg"%>
+        </div>
+      <% end %>
+    </div>
+    <%= @room.title %>
+    <%= @room.description %>
+    <%= link_to 'Edit', edit_room_path(@room) %>
+    <%= link_to 'Back', rooms_path%>
+    <%= button_to 'Delete', @room , method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+  </div>
 </div>
