@@ -14,7 +14,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to @client
+      redirect_to root_path, notice: "Booked Successfully!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,6 +42,6 @@ class ClientsController < ApplicationController
     end
 
     def client_params
-      params.require(:client).permit( :name, :arrival, :departure)
+      params.require(:client).permit(:name, :arrival, :departure)
     end
 end
