@@ -9,6 +9,7 @@
     </div>
     <%= @room.title %>
     <%= @room.description %>
+    <%= link_to 'Book Now', new_client_path %>
     <%= link_to 'Edit', edit_room_path(@room) %>
     <%= link_to 'Back', rooms_path%>
     <%= button_to 'Delete', @room , method: :delete, data: {turbo_confirm: "Are you sure?"} %>
