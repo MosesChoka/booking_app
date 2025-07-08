@@ -1,10 +1,22 @@
 <div class="mt-18">
-  <%= @client.name %>
-  <%= @client.arrival %>
-  <%= @client.departure %>
-  <%= link_to "Back", root_path %>
+  <h1 class="pt-4 sm:pt-6 font-bold text-2xl sm:text-4xl text-center text-blue-700">Clients Booking Details</h1>
+  <table class="w-full sm:w-1/2 sm:mx-auto table-auto border-collapse border border-gray-200 mt-8 sm:mt-12">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-200 px-4 py-2">Name</th>
+        <th class="border border-gray-200 px-4 py-2"> Arrival Date</th>
+        <th class="border border-gray-200 px-4 py-2"> Departure Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @client.name %></td>
+        <td class="text-center"><%= @client.arrival %></td>
+        <td class="text-center"><%= @client.departure %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back", root_path%>
   <%= link_to "Edit Details", edit_client_path(@client) %>
   <%= button_to "Delete", @client, method: :delete, data: {turbo_confirm: "Are you sure?"}%>
-  <h1 class="font-bold text-4xl">Clients#show</h1>
-  <p>Find me in app/views/clients/show.html.erb</p>
 </div>

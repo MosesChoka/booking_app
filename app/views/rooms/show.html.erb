@@ -1,17 +1,19 @@
 <div class="mt-20">
   <div class="w-4xl mx-auto">
-    <div class="py-20 grid grid-cols-3 gap-6">
+    <div class="w-fit mx-auto sm:w-4xl sm:py-20 grid grid-flow-row  sm:grid-cols-3 gap-6">
       <% @room.images.each do |image| %>
         <div>
-          <%= image_tag image, class:"border border-b-blue-700 rounded-lg"%>
+          <%= image_tag image, class:"border-solid"%>
         </div>
       <% end %>
     </div>
-    <%= @room.title %>
-    <%= @room.description %>
-    <%= link_to 'Book Now', new_client_path %>
+    <div class="w-96 md:w-[500px] text-justify">
+      <div class="font-semibold text-1xl md:text-2xl pb-1 md:pb-2"><%= @room.title%></div>
+      <%= @room.description %>
+    </div>
+    <%= link_to 'Book Now', new_client_path, class:"pr-1"%>|
+    <%= link_to 'Back', rooms_path, class:"pl-1"%><br>
     <%= link_to 'Edit', edit_room_path(@room) %>
-    <%= link_to 'Back', rooms_path%>
     <%= button_to 'Delete', @room , method: :delete, data: {turbo_confirm: "Are you sure?"} %>
   </div>
 </div>
