@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "pages#Home"
   get "/Home", to: "pages#Home"
   get "/gallery", to: "pages#Gallery"
