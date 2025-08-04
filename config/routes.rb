@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/Home", to: "pages#Home"
   get "/gallery", to: "pages#Gallery"
   get "contacts", to: "pages#Contacts"
+  get "/dashboard", to: "admindash#dashboard"
   # post "bookins/create"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
