@@ -1,34 +1,36 @@
 <div class="flex flex-row min-h-screen">
   <!-- Sidebar -->
   <div class="sm:h-screen w-64 lg:w-96 bg-gray-800 p-6 mt-17">
-    <h1 class="text-2xl font-semibold text-white">Admin Dashboard</h1>
+    <p class="text-white">
+      <span class="text-2xl font-semibold text-white">Hi, </span>
+      <%= current_user.email%>
+    </p>
     <ul class="mt-8">
-      <li><a href="#" class="text-gray-400 hover:text-white">Dashboard</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Users</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Settings</a></li>
+      <li><%= link_to "Home", root_path, class:"text-gray-400 hover:text-white"%></li>
+      <li><%=link_to "Users", clients_path, class:"text-gray-400 hover:text-white"%></li>
+      <li><%= link_to "Houses", rooms_path, class:"text-gray-400 hover:text-white"%></li>
     </ul>
   </div>
   <!-- Main Content -->
   <div class="flex-1 p-8">
-    <%= render 'clients' %>
-    <%= render 'rooms' %>
-    <!--
     <h2 class="text-3xl font-semibold">Welcome to the Dashboard</h2>
     <div class="mt-4">
       <div class="grid grid-cols-3 gap-6 text-white">
         <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">Total Users</h3>
-          <p class="text-3xl font-bold">1,500</p>
+          <h3 class="text-xl font-semibold">Total Clients Booked</h3>
+          <p class="text-3xl font-bold"><%= @clients.count%></p>
+        </div>
+        <div class="bg-blue-600 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">Bookings Today</h3>
+          <p class="text-3xl font-bold"><%= @clients.where(created_at:Date.current.all_day).count%></p>
         </div>
         <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">Revenue</h3>
-          <p class="text-3xl font-bold">$21,500</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">Pending Orders</h3>
-          <p class="text-3xl font-bold">43</p>
+          <h3 class="text-xl font-semibold">Weekly Bookings</h3>
+          <p class="text-3xl font-bold"><%= @clients.where(created_at:Date.current.all_week).count%></p>
         </div>
       </div>
-    </div>-->
+    </div>
+    <%= render 'clients' %>
+    <%= render 'rooms' %>
   </div>
 </div>

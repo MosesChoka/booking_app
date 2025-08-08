@@ -13,7 +13,9 @@
     </div>
     <%= link_to 'Book Now', new_client_path, class:"pr-1"%>|
     <%= link_to 'Back', rooms_path, class:"pl-1"%><br>
-    <%= link_to 'Edit', edit_room_path(@room) %>
-    <%= button_to 'Delete', @room , method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+    <% if current_user.has_role? :admin %>
+      <%= link_to 'Edit', edit_room_path(@room) %>
+      <%= button_to 'Delete', @room , method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+    <% end %>
   </div>
 </div>
